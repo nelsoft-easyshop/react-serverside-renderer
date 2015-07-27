@@ -12,7 +12,7 @@ For this to work, a nodejs express server is used to return a string representin
 
 Once the page is loaded into the browser, the client side reactjs kicks in and the javascript magic begins using the available [webpack](http://webpack.github.io/) bundled reactjs files.
 
-This bundle adds a Twig extension to load the reactjs properties. 
+This bundle also a Twig extension to allow react to be used directly with your twig templates. You need not enable the server side renderer to make use of this feature.
 
 ### React Tags
 
