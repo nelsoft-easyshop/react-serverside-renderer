@@ -128,7 +128,7 @@ module.exports = function (grunt) {
     });
     
     grunt.loadNpmTasks('grunt-webpack');
-    grunt.registerTask('default', ['bowercopy', 'webpack']);
+    grunt.registerTask('default', ['webpack']);
 };
 
 ```
