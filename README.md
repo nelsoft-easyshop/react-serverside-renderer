@@ -49,3 +49,12 @@ Ex:
 {{react('countdown')}}
 ```
 *Syntax is the same as the one before but without the props and the pipe character.*
+
+
+## ReactJS in Development Environments
+
+Most of the ReactJS Components that we will be creating would use the JSX sub-language to make the development process painless and fast. Unfortunately, no browser in the world understands what JSX is so we have to transpile (translate + compile) it first to regular Javascript before we can see the component in action. This is where [webpack](http://webpack.github.io/) comes in.
+
+
+
+
