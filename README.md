@@ -7,21 +7,6 @@ Once the page is loaded into the browser, the client side reactjs kicks in and t
 
 This bundle adds a Twig extension to load the reactjs properties. 
 
-# Installation
-
-Configure the bundle by adding the following into `app/config/config.yml` of your Symfony2 application.
-
-```
-react_server_side_renderer:
-    renderer:
-        render_server: "http://localhost:3000"
-    twig_extension:
-        src_path: "./reactjs/src/"
-```
-
-- renderer.render_server: this is the HTTP URI where the nodejs server resides
-- twig_extension.src_path: this is the location of the reactjs source files 
-
 ### React Tags
 
 There are currently two flavors of custom twig tags for ReactJS, one for with props and another for without.
@@ -54,6 +39,30 @@ Ex:
 ## ReactJS in Development Environments
 
 Most of the ReactJS Components that we will be creating would use the JSX sub-language to make the development process painless and fast. Unfortunately, no browser in the world understands what JSX is so we have to transpile (translate + compile) it first to regular Javascript before we can see the component in action. This is where [webpack](http://webpack.github.io/) comes in.
+
+
+
+# Installation
+
+Configure the bundle by adding the following into `app/config/config.yml` of your Symfony2 application.
+
+```
+react_server_side_renderer:
+    renderer:
+        render_server: "http://localhost:3000"
+    twig_extension:
+        src_path: "./reactjs/src/"
+```
+
+- renderer.render_server: this is the HTTP URI where the nodejs server resides
+- twig_extension.src_path: this is the location of the reactjs source files 
+
+Then run the nodejs server by going to the root of the application:
+```
+npm run-script react-start
+```
+
+
 
 
 
