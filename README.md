@@ -51,7 +51,7 @@ Most of the ReactJS Components that we will be creating would use the JSX sub-la
 
 # Installation
 
-1. Configure the bundle by adding the following into `app/config/config.yml` of your Symfony2 application.
+A. Configure the bundle by adding the following into `app/config/config.yml` of your Symfony2 application.
 
 ```
 react_server_side_renderer:
@@ -64,8 +64,8 @@ react_server_side_renderer:
 - renderer.render_server: this is the HTTP URI where the nodejs server resides
 - twig_extension.src_path: this is the location of the reactjs source files 
 
-A. Navigate to the `Nodejs` directory and run `npm install`
-B. Add a package.json file to the root of your application and add the following dependencies:
+B. Navigate to the `Nodejs` directory and run `npm install`
+C. Add a package.json file to the root of your application and add the following dependencies:
 
 ```
  "dependencies": {
@@ -78,7 +78,7 @@ B. Add a package.json file to the root of your application and add the following
  }
 ```
 
-C. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
+D. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
 
 ```
   webpack: {
