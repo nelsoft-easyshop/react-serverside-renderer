@@ -22,4 +22,19 @@ react_server_side_renderer:
 - renderer.render_server: this is the HTTP URI where the nodejs server resides
 - twig_extension.src_path: this is the location of the reactjs source files 
 
+### React Tags
+
+There are currently two flavors of custom twig tags for ReactJS, one for with props and another for without.
+
+With Props
+
+Syntax:
+
+{{{'prop1' : 'value1', ...}|react('component_name')}}
+
+Ex:
+
+{{{'name' : 'Kylo Ren'}|react('hello')}}
+
+Note that the entire statement is wrapped around two curly braces, the props with a pair of curly braces. A pipe ('|') is also present between the props and the react function containing the component name as the parameter.
 
