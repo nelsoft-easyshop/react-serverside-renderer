@@ -65,6 +65,7 @@ react_server_side_renderer:
 - twig_extension.src_path: this is the location of the reactjs source files 
 
 B. Navigate to the `Nodejs` directory and run `npm install`
+
 C. Add a package.json file to the root of your application and add the following dependencies:
 
 ```
