@@ -81,7 +81,14 @@ C. Add a package.json file to the root of your application and add the following
 D. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
 
 ```
-  webpack: {
+var path = require('path');
+var pagesBase = path.resolve('./web/assets/reactjs/maps');
+var webpack = require('webpack');
+
+module.exports = function (grunt) {
+    grunt.initConfig({
+        pkg: grunt.file.readJSON('package.json'),
+        webpack: {
             reactComponents: {
                 entry: grunt.file.expand({cwd: pagesBase}, '*Map.js').reduce(
                         function(map, page, index, array) {
@@ -109,17 +116,16 @@ D. Create a `Gruntfile.js` at the root of the application and add the following 
                 keepalive: grunt.option('watch'),
             }
         }
-
-```
-
-Don't forget to add the webpack task to grunt using
-
-```
+    });
+    
     grunt.loadNpmTasks('grunt-webpack');
-    grunt.registerTask('default', ['webpack']);
+    grunt.registerTask('default', ['bowercopy', 'webpack']);
+};
+
 ```
 
 Read more about creating a Gruntfile here: http://gruntjs.com/sample-gruntfile
+
 
 
 
