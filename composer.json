@@ -1,0 +1,16 @@
+{
+    "name": "nelsoft-easyshop/react-serverside-renderer",
+    "description": "This Bundle provides Symfony2 with reactjs server side rendering capability",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Louise Angelo Reberto",
+            "email": "la.roberto@easyshop.ph"
+        }
+    ],
+    "autoload": {
+        "psr-0" : {
+            "Yilinker\\ReactServersideRenderer" : "src"
+        }
+    }
+}
