@@ -64,8 +64,8 @@ react_server_side_renderer:
 - renderer.render_server: this is the HTTP URI where the nodejs server resides
 - twig_extension.src_path: this is the location of the reactjs source files 
 
-2. Navigate to the `Nodejs` directory and run `npm install`
-3. Add a package.json file to the root of your application and add the following dependencies:
+A. Navigate to the `Nodejs` directory and run `npm install`
+B. Add a package.json file to the root of your application and add the following dependencies:
 
 ```
  "dependencies": {
@@ -78,7 +78,7 @@ react_server_side_renderer:
  }
 ```
 
-4. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
+C. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
 
 ```
   webpack: {
