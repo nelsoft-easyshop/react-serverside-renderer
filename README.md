@@ -83,7 +83,8 @@ D. Add a package.json file to the root of your application and add the following
    "grunt-webpack": "^1.0.8",
    "webpack": "^1.10.1"
    "babel-core": "^5.6.18",
-   "babel-loader": "^5.3.1"
+   "babel-loader": "^5.3.1",
+   "react": "^0.13.3"
  }
 ```
 
