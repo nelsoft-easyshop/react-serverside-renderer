@@ -29,12 +29,23 @@ There are currently two flavors of custom twig tags for ReactJS, one for with pr
 With Props
 
 Syntax:
-
+```
 {{{'prop1' : 'value1', ...}|react('component_name')}}
-
+```
 Ex:
-
+```
 {{{'name' : 'Kylo Ren'}|react('hello')}}
-
+```
 Note that the entire statement is wrapped around two curly braces, the props with a pair of curly braces. A pipe ('|') is also present between the props and the react function containing the component name as the parameter.
 
+Without Props
+
+Syntax:
+```
+react('component_name')
+```
+Ex:
+```
+{{react('countdown')}}
+```
+Syntax is the same as the one before but without the props and the pipe character.
