@@ -9,8 +9,8 @@
         }
     ],
     "autoload": {
-        "psr-4" : {
-            "Yilinker\\ReactServersideRenderer" : "src"
+        "psr-0" : {
+            "Yilinker\\ReactServersideRenderer" : "src/"
         }
     }
 }
