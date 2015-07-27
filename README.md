@@ -130,9 +130,9 @@ Read more about creating a Gruntfile here: http://gruntjs.com/sample-gruntfile
 
 
 
-Then run the nodejs server by going to the root of the application:
+Then run the nodejs server by going to the Nodejs directory of the project and running
 ```
-npm run-script react-start
+npm start
 ```
 
 
