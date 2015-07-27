@@ -1,0 +1,12 @@
+services:
+
+    react_server_side_renderer.renderer:
+        class: React\Bundle\ServerSideRendererBundle\Service\Renderer
+        arguments: []
+
+    react_server_side_renderer.twig_extension:
+            class: React\Bundle\ServerSideRendererBundle\Twig\ReactTwigExtension
+            arguments: ['@react_server_side_renderer.renderer']
+            public: false
+            tags:
+                - { name: twig.extension }
