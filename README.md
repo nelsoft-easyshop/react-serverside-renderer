@@ -1,5 +1,11 @@
 # ReactJS server-side renderer
 
+Requirements:
+
+1. Node.js >= v0.12
+2. NPM
+3. Grunt
+
 This bundle allows symfony to utilize server side rendering (for SEO) for [reactjs](http://facebook.github.io/react/).
 For this to work, a nodejs express server is used to return a string representing the static HTML of the initial reactjs page. This is achieved by sending an HTTP request to the nodejs express server.
 
