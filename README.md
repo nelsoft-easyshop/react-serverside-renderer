@@ -5,6 +5,7 @@ Requirements:
 1. Node.js >= v0.12
 2. NPM
 3. Grunt
+4. Webpack
 
 This bundle allows symfony to utilize server side rendering (for SEO) for [reactjs](http://facebook.github.io/react/).
 For this to work, a nodejs express server is used to return a string representing the static HTML of the initial reactjs page. This is achieved by sending an HTTP request to the nodejs express server.
@@ -50,7 +51,7 @@ Most of the ReactJS Components that we will be creating would use the JSX sub-la
 
 # Installation
 
-Configure the bundle by adding the following into `app/config/config.yml` of your Symfony2 application.
+1. Configure the bundle by adding the following into `app/config/config.yml` of your Symfony2 application.
 
 ```
 react_server_side_renderer:
@@ -62,6 +63,19 @@ react_server_side_renderer:
 
 - renderer.render_server: this is the HTTP URI where the nodejs server resides
 - twig_extension.src_path: this is the location of the reactjs source files 
+
+2. Navigate to the `Nodejs` directory and run `npm install`
+3. Add a package.json file to the root of your application and add the following dependencies:
+
+```
+ "dependencies": {
+   ...
+   "grunt": "~0.4.5", 
+   "grunt-webpack": "^1.0.8",
+   "webpack": "^1.10.1"
+ }
+```
+
 
 Then run the nodejs server by going to the root of the application:
 ```
