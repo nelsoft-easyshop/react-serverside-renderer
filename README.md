@@ -73,8 +73,54 @@ react_server_side_renderer:
    "grunt": "~0.4.5", 
    "grunt-webpack": "^1.0.8",
    "webpack": "^1.10.1"
+   "babel-core": "^5.6.18",
+   "babel-loader": "^5.3.1"
  }
 ```
+
+4. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
+
+```
+  webpack: {
+            reactComponents: {
+                entry: grunt.file.expand({cwd: pagesBase}, '*Map.js').reduce(
+                        function(map, page, index, array) {
+                            map[path.basename(page)] = path.join(pagesBase, page);
+                            if(index == array.length-1){
+                                map['vendor'] = ['react'];
+                            }
+                            return map;
+                        }, {}
+                    ),
+                output: {
+                    path: './web/assets/reactjs/build',
+                    filename: '[name]' // Template based on keys in entry above
+                },
+                module: {
+                    loaders: [
+                        {test: /\.js?$/, exclude: /node_modules|bower_components/, loader: 'babel-loader'}
+                    ]
+                },
+                plugins: [
+                    new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js')
+                ],
+                failOnError: false,
+                watch: grunt.option('watch'),
+                keepalive: grunt.option('watch'),
+            }
+        }
+
+```
+
+Don't forget to add the webpack task to grunt using
+
+```
+    grunt.loadNpmTasks('grunt-webpack');
+    grunt.registerTask('default', ['webpack']);
+```
+
+Read more about creating a Gruntfile here: http://gruntjs.com/sample-gruntfile
+
 
 
 Then run the nodejs server by going to the root of the application:
