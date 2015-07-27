@@ -26,7 +26,7 @@ react_server_side_renderer:
 
 There are currently two flavors of custom twig tags for ReactJS, one for with props and another for without.
 
-With Props
+#### With Props
 
 Syntax:
 ```
@@ -36,9 +36,9 @@ Ex:
 ```
 {{{'name' : 'Kylo Ren'}|react('hello')}}
 ```
-Note that the entire statement is wrapped around two curly braces, the props with a pair of curly braces. A pipe ('|') is also present between the props and the react function containing the component name as the parameter.
+*Note that the entire statement is wrapped around two curly braces, the props with a pair of curly braces. A pipe ('|') is also present between the props and the react function containing the component name as the parameter.*
 
-Without Props
+#### Without Props
 
 Syntax:
 ```
@@ -48,4 +48,4 @@ Ex:
 ```
 {{react('countdown')}}
 ```
-Syntax is the same as the one before but without the props and the pipe character.
+*Syntax is the same as the one before but without the props and the pipe character.*
