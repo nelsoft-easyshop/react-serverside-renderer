@@ -166,6 +166,9 @@ All you have to do to reference reactjs in your pages is to:
 
 ```
 
+See the example map file and react component files in https://github.com/nelsoft-easyshop/react-serverside-renderer/tree/master/Resources/public/example
+
+
 Note that if the nodejs server is not running, then you won't have server side rendering enabled but your app will still work. In other words, your app won't be indexable but you can use it as it is. This is useful when your working on your dev environment. 
 
 
