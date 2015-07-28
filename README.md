@@ -1,5 +1,9 @@
 # ReactJS server-side renderer
 
+What does this bundle do:
+1. Allow reactjs usage with symfony twig
+2. Allow server side reactjs (polymorphic) rendering (OPTIONAL)
+
 Requirements:
 
 1. Node.js >= v0.12
@@ -154,9 +158,14 @@ F. Move react templating files from the bundle to the symfony web directory:
 
 All you have to do to reference reactjs in your pages is to:
 
-- Code your reactjs components in `web/assets/reactjs/src`
-- Create a map file in `web/assets/reactjs/map`. There is usually one map file per page. This contains the reactjs components used in a particular page.
+- Code your reactjs components and put them in your reactjs source directory, for example `web/assets/reactjs/src`
+- Create a map file in and add it to youe reactjs maps dircetory, for example: `web/assets/reactjs/map`. 
+  There is usually one map file per page. This contains the reactjs components used in a particular page.
+
+See the example map file and react component files in https://github.com/nelsoft-easyshop/react-serverside-renderer/tree/master/Resources/public/example
+
 - Build using grunt-webpack by running `grunt`
+  Note that everytime a react component is changed, you will have to rerun grunt. You can skip this by simply running `grunt --watch` instead
 - Add your react twig tags into your view file
 - Reference the bundled map file in your twig templates as well as the `reactRender.js` file. The reactRender file simply attaches your react client side logic to the server-side-generated react html.
 
@@ -165,8 +174,6 @@ All you have to do to reference reactjs in your pages is to:
     <script src="{{ asset('js/src/reactRender.js') }}"></script>
 
 ```
-
-See the example map file and react component files in https://github.com/nelsoft-easyshop/react-serverside-renderer/tree/master/Resources/public/example
 
 
 Note that if the nodejs server is not running, then you won't have server side rendering enabled but your app will still work. In other words, your app won't be indexable but you can use it as it is. This is useful when your working on your dev environment. 
