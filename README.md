@@ -1,6 +1,7 @@
 # ReactJS server-side renderer
 
 What does this bundle do:
+
 1. Allow reactjs usage with symfony twig
 2. Allow server side reactjs (polymorphic) rendering (OPTIONAL)
 
