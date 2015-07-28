@@ -145,7 +145,14 @@ F. Move react templating files from the bundle to the symfony web directory:
 - 'Resource/public/js/mapTemplate.js' -> '[symfony2/assets/directory]/reactjs/maps/mapTemplate.js'
 
 
-# Server Side Renderer Usage
+
+# Usage
+
+## Using React with TWIG
+
+
+
+## Server Side Renderer Usage
 
 Navigate to the assets directory of your application and then from here execute `server.js` in  the bundle
 For example:
@@ -155,7 +162,10 @@ cd ../../../../web/assets
 node ../../vendor/yilinker/reactjs-serverside-renderer/Nodejs/server.js
 ```
 
-## Pro-tip:
+Note that you don't have to start the SSR server to make the react integration work. You only need it if you want server side rendering, which is usually just in the production environment.
+
+
+### Pro-tip:
 
 You can make the execution step faster by creating an npm run-script for server.js:
 
