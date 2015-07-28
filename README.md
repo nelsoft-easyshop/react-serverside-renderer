@@ -139,13 +139,71 @@ module.exports = function (grunt) {
 
 Read more about creating a Gruntfile here: http://gruntjs.com/sample-gruntfile
 
+F. Move react templating files from the bundle to the symfony web directory:
+
+- 'Resource/public/js/reactRender.js' -> '[symfony2/assets/directory]/js/reactRender.js'
+- 'Resource/public/js/mapTemplate.js' -> '[symfony2/assets/directory]/reactjs/maps/mapTemplate.js'
 
 
-Then run the nodejs server by going to the Nodejs directory of the project and running:
+
+# Usage
+
+## Using React with TWIG
+
+![what are you looking at?](http://i.imgur.com/XjDNc6h.png)
+
+All you have to do to reference reactjs in your pages is to:
+
+- Code your reactjs components in `web/assets/reactjs/src`
+- Create a map file in `web/assets/reactjs/map`. There is usually one map file per page. This contains the reactjs components used in a particular page.
+- Build using grunt-webpack by running `grunt`
+- Add your react twig tags into your view file
+- Reference the bundled map file in your twig templates as well as the `reactRender.js` file. The reactRender file simply attaches your react client side logic to the server-side-generated react html.
 
 ```
-npm start
+    <script src="{{ asset('reactjs/build/somepageMap.js') }}"></script>
+    <script src="{{ asset('js/src/reactRender.js') }}"></script>
+
 ```
+
+Note that if the nodejs server is not running, then you won't have server side rendering enabled but your app will still work. In other words, your app won't be indexable but you can use it as it is. This is useful when your working on your dev environment. 
+
+
+## Server Side Renderer Usage
+
+Navigate to the assets directory of your application and then from here execute `server.js` in  the bundle
+For example:
+
+```
+cd ../../../../web/assets
+node ../../vendor/yilinker/reactjs-serverside-renderer/Nodejs/server.js
+```
+
+Note that you don't have to start the SSR server to make the react integration work. You only need it if you want server side rendering, which is usually just in the production environment.
+
+
+### Pro-tip:
+
+You can make the execution step faster by creating an npm run-script for server.js:
+
+A. At the package.json in the root of the application, add the following script commands:
+
+```
+  "scripts": {
+      "react-start": "cd vendor/yilinker/reactjs-serverside-renderer/Nodejs && npm start"
+  },
+```
+
+B. At the package.json in `yilinker/reactjs-serverside-renderer/Nodejs/`, add a *start* script that performs the appropriate directory change command and the node initiation command. Note, you will most likely have to modify the commands a bit depending on how your folders are structured.
+
+```
+  "scripts": {
+    "start": "cd ../../../../web/assets && node ../../vendor/yilinker/reactjs-serverside-renderer/Nodejs/server.js",
+  },
+```
+
+C. You can then simply run `npm run-script react-start` at the root of your symfony application
+ 
 
 
 
