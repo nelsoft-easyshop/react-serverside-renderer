@@ -159,7 +159,7 @@ F. Move react templating files from the bundle to the symfony web directory:
 All you have to do to reference reactjs in your pages is to:
 
 - Code your reactjs components and put them in your reactjs source directory, for example `web/assets/reactjs/src`
-- Create a map file in and add it to youe reactjs maps dircetory, for example: `web/assets/reactjs/map`. 
+- Create a map file in and add it to your reactjs maps directory, for example: `web/assets/reactjs/map`. 
   There is usually one map file per page. This contains the reactjs components used in a particular page.
 
 See the example map file and react component files in https://github.com/nelsoft-easyshop/react-serverside-renderer/tree/master/Resources/public/example
