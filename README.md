@@ -150,6 +150,23 @@ F. Move react templating files from the bundle to the symfony web directory:
 
 ## Using React with TWIG
 
+![what are you looking at?](http://i.imgur.com/XjDNc6h.png)
+
+All you have to do to reference reactjs in your pages is to:
+
+- Code your reactjs components in `web/assets/reactjs/src`
+- Create a map file in `web/assets/reactjs/map`. There is usually one map file per page. This contains the reactjs components used in a particular page.
+- Build using grunt-webpack by running `grunt`
+- Add your react twig tags into your view file
+- Reference the bundled map file in your twig templates as well as the `reactRender.js` file. The reactRender file simply attaches your react client side logic to the server-side-generated react html.
+
+```
+    <script src="{{ asset('reactjs/build/somepageMap.js') }}"></script>
+    <script src="{{ asset('js/src/reactRender.js') }}"></script>
+
+```
+
+Note that if the nodejs server is not running, then you won't have server side rendering enabled but your app will still work. In other words, your app won't be indexable but you can use it as it is. This is useful when your working on your dev environment. 
 
 
 ## Server Side Renderer Usage
