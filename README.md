@@ -51,7 +51,8 @@ Most of the ReactJS Components that we will be creating would use the JSX sub-la
 
 # Installation
 
-A. Add the react bundle in your AppKernel.php file     
+A. Add the react bundle in your AppKernel.php file    
+
     ```
         $bundles = array(
             //...
@@ -72,7 +73,7 @@ react_server_side_renderer:
 - renderer.render_server: this is the HTTP URI where the nodejs server resides
 - twig_extension.src_path: this is the location of the reactjs source files 
 
-C. Navigate to the `Nodejs` directory and run `npm install`
+C. Navigate to the `Nodejs` directory and run `npm install` to install the bundle specific dependencies
 
 D. Add a package.json file to the root of your application and add the following dependencies:
 
@@ -87,6 +88,7 @@ D. Add a package.json file to the root of your application and add the following
    "react": "^0.13.3"
  }
 ```
+Again run, `npm install` but this time at the root of the application to install the application node dependencies  
 
 E. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
 
@@ -131,6 +133,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-webpack');
     grunt.registerTask('default', ['webpack']);
 };
+
+
 
 ```
 
