@@ -6,6 +6,10 @@
         {
             "name": "Louise Angelo Roberto",
             "email": "la.roberto@easyshop.ph"
+        },
+        {
+            "name": "Samuel Gavinio",
+            "email": "samgavinio@easyshop.ph"
         }
     ],
     "autoload": {
