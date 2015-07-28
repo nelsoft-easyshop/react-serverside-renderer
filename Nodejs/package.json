@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "cd ../../../../../web/assets && node ../../src/React/Bundle/ServerSideRendererBundle/Nodejs/server.js",
+    "start": "cd ../../../../web/assets && node ../../vendor/yilinker/reactjs-serverside-renderer/Nodejs/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -14,3 +14,4 @@
     "node-jsx": "^0.12.0"
   }
 }
+
