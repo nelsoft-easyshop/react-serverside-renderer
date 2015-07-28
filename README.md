@@ -88,6 +88,7 @@ D. Add a package.json file to the root of your application and add the following
    "react": "^0.13.3"
  }
 ```
+
 Again run, `npm install` but this time at the root of the application to install the application node dependencies  
 
 E. Create a `Gruntfile.js` at the root of the application and add the following webpack block:
@@ -134,16 +135,14 @@ module.exports = function (grunt) {
     grunt.registerTask('default', ['webpack']);
 };
 
-
-
 ```
 
 Read more about creating a Gruntfile here: http://gruntjs.com/sample-gruntfile
 
 
 
+Then run the nodejs server by going to the Nodejs directory of the project and running:
 
-Then run the nodejs server by going to the Nodejs directory of the project and running
 ```
 npm start
 ```
