@@ -141,8 +141,8 @@ Read more about creating a Gruntfile here: http://gruntjs.com/sample-gruntfile
 
 F. Move react templating files from the bundle to the symfony web directory:
 
-'Resource/public/js/reactRender.js' -> '[symfony2/assets/directory]/js/reactRender.js'
-'Resource/public/js/mapTemplate.js' -> '[symfony2/assets/directory]/reactjs/maps/mapTemplate.js'
+- 'Resource/public/js/reactRender.js' -> '[symfony2/assets/directory]/js/reactRender.js'
+- 'Resource/public/js/mapTemplate.js' -> '[symfony2/assets/directory]/reactjs/maps/mapTemplate.js'
 
 
 # Server Side Renderer Usage
@@ -159,7 +159,7 @@ node ../../vendor/yilinker/reactjs-serverside-renderer/Nodejs/server.js
 
 You can make the execution step faster by creating an npm run-script for server.js:
 
-1. At the package.json in the root of the application, add the following script commands:
+A. At the package.json in the root of the application, add the following script commands:
 
 ```
   "scripts": {
@@ -167,7 +167,7 @@ You can make the execution step faster by creating an npm run-script for server.
   },
 ```
 
-2. At the package.json in `yilinker/reactjs-serverside-renderer/Nodejs/`, add a *start* script that performs the appropriate directory change command and the node initiation command. Note, you will most likely have to modify the commands a bit depending on how your folders are structured.
+B. At the package.json in `yilinker/reactjs-serverside-renderer/Nodejs/`, add a *start* script that performs the appropriate directory change command and the node initiation command. Note, you will most likely have to modify the commands a bit depending on how your folders are structured.
 
 ```
   "scripts": {
@@ -175,7 +175,7 @@ You can make the execution step faster by creating an npm run-script for server.
   },
 ```
 
-3. You can then simply run `npm run-script react-start` at the root of your symfony application
+C. You can then simply run `npm run-script react-start` at the root of your symfony application
  
 
 
