@@ -12,13 +12,22 @@ class Renderer
     private $renderServer;
 
     /**
+     * Is react rendered enabled
+     *
+     * @var boolean
+     */
+    private $isEnabled;
+
+    /**
      * Set the Renderer class connfigurations
      *
      * @param string $renderServer
+     * @param boolean $isEnabled
      */
-    public function setConfig($renderServer)
+    public function setConfig($renderServer, $isEnabled = true)
     {
         $this->renderServer = $renderServer;
+        $this->isEnabled = $isEnabled;
     }
 
     /**
@@ -30,16 +39,18 @@ class Renderer
      */
     public function generateReactMarkup($module, $props) 
     {
-        $propertiesJson = json_encode($props);        
-
-        $serverMarkup = @file_get_contents(
-            $this->renderServer .
-            '?module=' .
-            urlencode($module) .
-            '&props=' .
-            urlencode($propertiesJson)
-        );     
-
+        $propertiesJson = json_encode($props);
+        $serverMarkup = null;
+        if($this->isEnabled){
+            $serverMarkup = @file_get_contents(
+                $this->renderServer .
+                '?module=' .
+                urlencode($module) .
+                '&props=' .
+                urlencode($propertiesJson)
+            );     
+        }
+        
         return $serverMarkup;
     }
 }

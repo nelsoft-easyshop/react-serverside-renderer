@@ -28,6 +28,7 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('renderer')
                     ->children()
                         ->scalarNode('render_server')->end()
+                        ->scalarNode('is_enabled')->end()
                     ->end()
                 ->end()
                 ->arrayNode('twig_extension')

@@ -26,6 +26,13 @@ class ReactServerSideRendererExtension extends Extension
         $loader->load('services.yml');
 
         // Once the services definition are read, get your service and add a method call to setConfig()
+        
+        $reactServerSideRendererDefinition = $container->getDefinition('react_server_side_renderer.renderer');
+        $reactServerSideRendererDefinition->addMethodCall('setConfig', [
+            $processedConfig['renderer']['render_server'],
+            $processedConfig['renderer']['is_enabled']
+        ]);
+        
         $reactServerSideRendererDefinition = $container->getDefinition('react_server_side_renderer.renderer');
         $reactServerSideRendererDefinition->addMethodCall('setConfig', [$processedConfig['renderer']['render_server']]);
 
