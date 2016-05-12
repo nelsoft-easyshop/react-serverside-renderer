@@ -71,6 +71,7 @@ B. Configure the bundle by adding the following into `app/config/config.yml` of 
 react_server_side_renderer:
     renderer:
         render_server: "http://localhost:3000"
+        is_enabled: true
     twig_extension:
         src_path: "./reactjs/src/"
 ```
